@@ -39,13 +39,9 @@ RS3 Dungeoneering Token farmer made for ME in LUA
 and **Deflect Melee**(![image](https://github.com/animoofps/ME-DGTokenFarmer/assets/144723877/18e26310-2482-46aa-a4bf-b1d77857d87c))
  is a **MUST** have in your ability bar!
 
-
-
-
-## Features
-
-- Automates token farming process.
-- **To add to the script :** ImGUI that lets you pick from Max Guild and Wars room [and whatever else people think of]
+## To add
+- ImGUI that lets you pick from Max Guild and Wars room [and whatever else people think of]
+- Better banking/prayer renewal utilization
 
 ## Contribution
 Feel free to post stuff that could improve the script further, I will implement it into the script!
