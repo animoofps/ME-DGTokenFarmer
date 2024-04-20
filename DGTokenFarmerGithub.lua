@@ -213,9 +213,9 @@ local function banking()
     API.DoBankPin(PIN)
     API.RandomSleep2(1500, 1000, 800) -- sleeping to heal off damage/poison
     if needBank() then
+        API.RandomSleep2(200, 200, 200)
         API.Write_LoopyLoop(false)
         print("No more food left, exiting the script!")
-        API.RandomSleep2(200, 200, 200)
         shouldContinue = false
     end
     if shouldContinue then
