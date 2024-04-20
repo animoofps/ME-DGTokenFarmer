@@ -47,3 +47,6 @@ and **Deflect Melee**(![image](https://github.com/animoofps/ME-DGTokenFarmer/ass
 ## Contribution
 Feel free to post stuff that could improve the script further, I will implement it into the script!
 Big thanks to everyone that helped me out with the script including [**Dead**](https://me.deadcod.es/), [**Higgins**](https://github.com/higgins-dotcom) and [**Krigaren**](https://github.com/Krigarenex)!
+
+**SPECIAL THANKS** to ![image](https://github.com/animoofps/ME-DGTokenFarmer/assets/144723877/53a38827-a723-4434-a3ea-8f80333b0b9e)
+ for not patching the safe spot !
