@@ -205,15 +205,24 @@ local function needBank()
 end
 
 local function banking()
+    local shouldContinue = true
     API.RandomSleep2(200, 200, 300)
     API.DoAction_NPC(0x33, 1888, {19918}, 50) -- QUICKLOAD
     API.RandomSleep2(800, 500, 600)
     API.WaitUntilMovingEnds()
     API.DoBankPin(PIN)
     API.RandomSleep2(1500, 1000, 800) -- sleeping to heal off damage/poison
-    API.DoAction_Object1(0x29, 0, {92278}, 50)
-    API.RandomSleep2(2000, 1500, 800)
-    API.WaitUntilMovingandAnimEnds()
+    if needBank() then
+        API.Write_LoopyLoop(false)
+        print("No more food left, exiting the script!")
+        API.RandomSleep2(200, 200, 200)
+        shouldContinue = false
+    end
+    if shouldContinue then
+        API.DoAction_Object1(0x29, 0, {92278}, 50)
+        API.RandomSleep2(2000, 1500, 800)
+        API.WaitUntilMovingandAnimEnds()
+    end
 end
 
 local function NPCCheck()
@@ -236,9 +245,13 @@ local function NPCCheck()
                 if needBank() then
                     banking()
                 end
-                API.DoAction_Object1(0x39, 0, {124361}, 50)
-                API.RandomSleep2(1200, 1000, 2000)
-                API.WaitUntilMovingandAnimEnds()
+                if API.Read_LoopyLoop() then
+                    API.DoAction_Object1(0x39, 0, {124361}, 50)
+                    API.RandomSleep2(1200, 1000, 2000)
+                    API.WaitUntilMovingandAnimEnds()
+                else
+                    API.RandomSleep2(200, 200, 200)
+                end
             end
         end
     end
@@ -280,6 +293,7 @@ end
 
 local function deathCheck()
     if findNPC(27299, 50) then
+        API.RandomSleep2(2500, 1500, 2000)
         print("You managed to die... (idiot), do we grab your things and go home?")
         API.RandomSleep2(1000, 800, 600)
         API.DoAction_NPC(0x29, 1776, {27299}, 50)
@@ -296,10 +310,8 @@ local function deathCheck()
 end
 
 deathCheck()
+API.SetDrawTrackedSkills(true)
 while API.Read_LoopyLoop() do
-    API.SetDrawTrackedSkills(true)
-    API.ScriptRuntimeString()
-    API.GetTrackedSkills()
     antiIdleTask()
     healthCheck()
     enterdung()
