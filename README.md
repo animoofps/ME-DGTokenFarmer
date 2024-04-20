@@ -1,5 +1,5 @@
 # ME-DGTokenFarmer
-RS3 Dungeoneering Token farmer made for ME in LUA (**Around 275k-300k tokens per hour using highest tear Necromancy gear**)
+RS3 Dungeoneering Token farmer made for ME in LUA (**Around 275k-300k tokens per hour using highest tier Necromancy gear**)
 
 ## Setup
 1. Download the LUA script and place it in your Lua_Scripts folder   ![Path to folder](https://github.com/animoofps/ME-DGTokenFarmer/assets/144723877/cc4b571c-57e5-47d3-953f-49c52575d32d)
