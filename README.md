@@ -37,7 +37,7 @@ RS3 Dungeoneering Token farmer made for ME in LUA
 , **Soul Sap**(![image](https://github.com/animoofps/ME-DGTokenFarmer/assets/144723877/3eb65d21-c82a-4945-8376-ffa0b2e8cca7))
 ,**Volley of Souls**(![image](https://github.com/animoofps/ME-DGTokenFarmer/assets/144723877/3e0162fe-7e95-4240-85c2-56d0a11361bf))
 and **Deflect Melee**(![image](https://github.com/animoofps/ME-DGTokenFarmer/assets/144723877/18e26310-2482-46aa-a4bf-b1d77857d87c))
- is a **MUST**! in your ability bar
+ is a **MUST** have in your ability bar!
 
 
 
