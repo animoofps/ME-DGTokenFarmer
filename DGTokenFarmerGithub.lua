@@ -63,7 +63,7 @@ local function enterdung()
         API.DoAction_Object1(0x39, 0, {124285}, 50)
         API.RandomSleep2(800, 600, 1000)
         API.WaitUntilMovingEnds()
-        API.RandomSleep2(300, 200, 500)
+        API.RandomSleep2(500, 300, 500)
         if API.Select_Option("Normal mode") then
             print("Normal mode found, continuing")
             API.DoAction_Interface(0xffffffff, 0xffffffff, 0, 1188, 8, -1, 2912)
@@ -278,6 +278,24 @@ local function healthCheck()
     end
 end
 
+local function deathCheck()
+    if findNPC(27299, 50) then
+        print("You managed to die... (idiot), do we grab your things and go home?")
+        API.RandomSleep2(1000, 800, 600)
+        API.DoAction_NPC(0x29, 1776, {27299}, 50)
+        API.RandomSleep2(800, 400, 600)
+        API.DoAction_Interface(0xffffffff, 0xffffffff, 1, 1626, 47, -1, 3808)
+        API.RandomSleep2(1000, 800, 600)
+        API.DoAction_Interface(0xffffffff, 0xffffffff, 0, 1626, 72, -1, 2912)
+        API.RandomSleep2(1500, 1000, 800)
+        API.DoAction_Ability("Max guild Teleport", 1, API.OFF_ACT_GeneralInterface_route)
+        API.RandomSleep2(1200, 1000, 1500)
+        API.WaitUntilMovingandAnimEnds()
+        API.RandomSleep2(1200, 800, 1000)
+    end
+end
+
+deathCheck()
 while API.Read_LoopyLoop() do
     API.SetDrawTrackedSkills(true)
     API.ScriptRuntimeString()
