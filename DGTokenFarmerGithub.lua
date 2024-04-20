@@ -102,13 +102,15 @@ local function monstercheck1()
         local cerberus = knightNpc[1]
 
         if cerberus.Tile_XYZ then
-            local newTileX = cerberus.Tile_XYZ.x + 19
-            local newTileY = cerberus.Tile_XYZ.y + 39
+            local randomNumber = math.random(-1, 4)
+            local newTileX = cerberus.Tile_XYZ.x + 19 + randomNumber
+            local newTileY = cerberus.Tile_XYZ.y + 39 + randomNumber
             local newTileZ = cerberus.Tile_XYZ.z
 
             if not API.PInArea(newTileX, 1, newTileY, 1, newTileZ) then
                 --    print("Walking to dog1")
                 API.DoAction_WalkerW(WPOINT.new(newTileX, newTileY, newTileZ))
+                print("Random number: " .. randomNumber)
                 API.RandomSleep2(1200, 800, 1000)
             end
         end
@@ -152,9 +154,10 @@ local function knightcheck1()
     if #knightNpc > 0 then
         local knight = knightNpc[1]
         local tileXYZ = knight.Tile_XYZ
+        local randomNumber = math.random(-1, 5)
         if tileXYZ then
             newTileX = knight.Tile_XYZ.x - 4
-            newTileY = knight.Tile_XYZ.y
+            newTileY = knight.Tile_XYZ.y + randomNumber
             newTileZ = knight.Tile_XYZ.z
 
             API.RandomSleep2(200, 200, 100)
@@ -162,6 +165,7 @@ local function knightcheck1()
             if findNpcOrObject(124355, 5, 12) then
                 --    print("Walking to knight check1")
                 API.DoAction_WalkerW(WPOINT.new(newTileX, newTileY, newTileZ))
+                print("Random number: " .. randomNumber)
                 API.RandomSleep2(1000, 600, 600)
                 API.WaitUntilMovingEnds()
             end
@@ -205,30 +209,20 @@ local function needBank()
 end
 
 local function banking()
-    local shouldContinue = true
     API.RandomSleep2(200, 200, 300)
     API.DoAction_NPC(0x33, 1888, {19918}, 50) -- QUICKLOAD
     API.RandomSleep2(800, 500, 600)
     API.WaitUntilMovingEnds()
     API.DoBankPin(PIN)
     API.RandomSleep2(1500, 1000, 800) -- sleeping to heal off damage/poison
-    if needBank() then
-        API.RandomSleep2(200, 200, 200)
-        API.Write_LoopyLoop(false)
-        print("No more food left, exiting the script!")
-        shouldContinue = false
-    end
-    if shouldContinue then
-        API.DoAction_Object1(0x29, 0, {92278}, 50)
-        API.RandomSleep2(2000, 1500, 800)
-        API.WaitUntilMovingandAnimEnds()
-    end
+    API.DoAction_Object1(0x29, 0, {92278}, 50)
+    API.RandomSleep2(2000, 1500, 800)
+    API.WaitUntilMovingandAnimEnds()
 end
 
 local function NPCCheck()
     local finddog = findNPC(29302, 50)
     local findpyrefiend = findNPC(29272, 50)
-
     if not finddog then
         if findpyrefiend then
             if UTILS.isDeflectMelee() then
@@ -245,13 +239,9 @@ local function NPCCheck()
                 if needBank() then
                     banking()
                 end
-                if API.Read_LoopyLoop() then
-                    API.DoAction_Object1(0x39, 0, {124361}, 50)
-                    API.RandomSleep2(1200, 1000, 2000)
-                    API.WaitUntilMovingandAnimEnds()
-                else
-                    API.RandomSleep2(200, 200, 200)
-                end
+                API.DoAction_Object1(0x39, 0, {124361}, 50)
+                API.RandomSleep2(1200, 1000, 2000)
+                API.WaitUntilMovingandAnimEnds()
             end
         end
     end
