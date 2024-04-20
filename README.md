@@ -45,7 +45,6 @@ and **Deflect Melee**(![image](https://github.com/animoofps/ME-DGTokenFarmer/ass
 ## Features
 
 - Automates token farming process.
-- Supports additional functionality from DEADS UTILS.
 - **To add to the script :** ImGUI that lets you pick from Max Guild and Wars room [and whatever else people think of]
 
 ## Contribution
