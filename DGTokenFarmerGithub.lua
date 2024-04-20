@@ -210,7 +210,7 @@ local function banking()
     API.RandomSleep2(800, 500, 600)
     API.WaitUntilMovingEnds()
     API.DoBankPin(PIN)
-    API.RandomSleep2(1200, 800, 1000) -- sleeping to heal off damage/poison
+    API.RandomSleep2(1500, 1000, 800) -- sleeping to heal off damage/poison
     API.DoAction_Object1(0x29, 0, {92278}, 50)
     API.RandomSleep2(2000, 1500, 800)
     API.WaitUntilMovingandAnimEnds()
