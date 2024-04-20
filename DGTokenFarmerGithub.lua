@@ -1,26 +1,11 @@
-print("Dungeoneering token farmer v0.95 started")
+print("Dungeoneering token farmer v1.0 started")
 local API = require("api")
 local UTILS = require("utils")
-local startTime = os.time()
-local idleTimeThreshold = math.random(180, 260)
 -----------------------------------------------
 local foodName = "Shark"
 local foodAmount = 25
 local PIN = 1234
 -----------------------------------------------
-
--- Function to check if the character should perform anti-idle tasks
-local function antiIdleTask()
-    local currentTime = os.time()
-    local elapsedTime = os.difftime(currentTime, startTime)
-
-    if elapsedTime >= idleTimeThreshold then
-        API.PIdle2()
-        -- Reset the timer and generate a new random idle time
-        startTime = os.time()
-        print("Reset Timer & Threshold")
-    end
-end
 
 local function hasTarget()
     local interacting = API.ReadLpInteracting()
@@ -209,15 +194,24 @@ local function needBank()
 end
 
 local function banking()
-    API.RandomSleep2(200, 200, 300)
+    local shouldContinue = true
+    API.RandomSleep2(500, 300, 500)
     API.DoAction_NPC(0x33, 1888, {19918}, 50) -- QUICKLOAD
     API.RandomSleep2(800, 500, 600)
     API.WaitUntilMovingEnds()
     API.DoBankPin(PIN)
     API.RandomSleep2(1500, 1000, 800) -- sleeping to heal off damage/poison
-    API.DoAction_Object1(0x29, 0, {92278}, 50)
-    API.RandomSleep2(2000, 1500, 800)
-    API.WaitUntilMovingandAnimEnds()
+    if needBank() then
+        API.RandomSleep2(200, 200, 200)
+        API.Write_LoopyLoop(false)
+        print("No more food left, exiting the script!")
+        shouldContinue = false
+    end
+    if shouldContinue then
+        API.DoAction_Object1(0x29, 0, {92278}, 50)
+        API.RandomSleep2(2000, 1500, 800)
+        API.WaitUntilMovingandAnimEnds()
+    end
 end
 
 local function NPCCheck()
@@ -239,9 +233,13 @@ local function NPCCheck()
                 if needBank() then
                     banking()
                 end
-                API.DoAction_Object1(0x39, 0, {124361}, 50)
-                API.RandomSleep2(1200, 1000, 2000)
-                API.WaitUntilMovingandAnimEnds()
+                if API.Read_LoopyLoop() then
+                    API.DoAction_Object1(0x39, 0, {124361}, 50)
+                    API.RandomSleep2(1200, 1000, 2000)
+                    API.WaitUntilMovingandAnimEnds()
+                else
+                    API.RandomSleep2(200, 200, 200)
+                end
             end
         end
     end
@@ -299,11 +297,11 @@ local function deathCheck()
     end
 end
 
-deathCheck()
 API.SetDrawTrackedSkills(true)
 while API.Read_LoopyLoop() do
-    antiIdleTask()
+    UTILS:antiIdle()
     healthCheck()
+    deathCheck()
     enterdung()
     knightcheck1()
     knightcheck2()
