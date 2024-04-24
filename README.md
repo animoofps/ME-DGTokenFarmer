@@ -2,7 +2,7 @@
 RS3 Dungeoneering Token farmer made for ME in LUA (**Around 275k-300k tokens per hour using highest tier Necromancy gear**)
 
 ## Setup
-1. Download the LUA script and place it in your Lua_Scripts folder   ![Path to folder](https://github.com/animoofps/ME-DGTokenFarmer/assets/144723877/cc4b571c-57e5-47d3-953f-49c52575d32d)
+1. Download DGTokenFarmerGithub.lua and utils.lua, place them in your Lua_Scripts folder   ![Path to folder](https://github.com/animoofps/ME-DGTokenFarmer/assets/144723877/cc4b571c-57e5-47d3-953f-49c52575d32d)
 
 2. M̶a̶k̶e̶ ̶s̶u̶r̶e̶ ̶t̶o̶ ̶h̶a̶v̶e̶ ̶D̶E̶A̶D̶S̶ ̶U̶T̶I̶L̶S̶ ̶d̶o̶w̶n̶l̶o̶a̶d̶e̶d̶ ̶f̶o̶r̶ ̶a̶d̶d̶i̶t̶i̶o̶n̶a̶l̶ ̶f̶u̶n̶c̶t̶i̶o̶n̶a̶l̶i̶t̶y̶.
    Added utils.lua to the git (for future utils updates visit https://me.deadcod.es/dead-utils)
