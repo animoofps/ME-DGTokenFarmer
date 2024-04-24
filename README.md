@@ -40,9 +40,10 @@ and **Deflect Melee**(![image](https://github.com/animoofps/ME-DGTokenFarmer/ass
  is a **MUST** have in your ability bar!
 
 ## To do
-- ImGUI that lets you pick from Max Guild and Wars room [and whatever else people think of]
+- ImGUI that lets you pick from Max Guild and Wars room
 - Better banking/prayer renewal utilization
 - Fix the combo bug (Sometimes it fails to 1tick the dash-dive combo and the NPC's follow you to the cerberus)
+-  [and whatever else people think of]
 
 ## Contribution
 Feel free to post stuff that could improve the script further, I will implement it into the script!
