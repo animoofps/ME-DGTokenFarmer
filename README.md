@@ -6,7 +6,7 @@ RS3 Dungeoneering Token farmer made for ME in LUA (**Around 275k-300k tokens per
 ## Setup
 1. Download DGTokenFarmerGithub.lua and utils.lua, place them in your Lua_Scripts folder   ![Path to folder](https://github.com/animoofps/ME-DGTokenFarmer/assets/144723877/cc4b571c-57e5-47d3-953f-49c52575d32d)
 
-  **(For future Dead's utils updates visit [****Dead's utils****](https://me.deadcod.es/dead-utils) )**
+     **(For future Dead's utils updates visit [****Dead's utils****](https://me.deadcod.es/dead-utils) )**
 
 3. Do this if you plan on using Max Guild! **(** Thank you violvte **)**: ![image](https://github.com/animoofps/ME-DGTokenFarmer/assets/144723877/a7414ddc-94c7-4466-952b-836b4d3223cc)                                                     
 
