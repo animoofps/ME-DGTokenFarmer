@@ -1,6 +1,8 @@
 # ME-DGTokenFarmer
 RS3 Dungeoneering Token farmer made for ME in LUA (**Around 275k-300k tokens per hour using highest tier Necromancy gear**)
 
+ **Start either at War's Retreat of Max Guild !**
+
 ## Setup
 1. Download DGTokenFarmerGithub.lua and utils.lua, place them in your Lua_Scripts folder   ![Path to folder](https://github.com/animoofps/ME-DGTokenFarmer/assets/144723877/cc4b571c-57e5-47d3-953f-49c52575d32d)
 **(For future Dead's utils updates visit [****Dead's utils****](https://me.deadcod.es/dead-utils) )**
@@ -11,8 +13,6 @@ RS3 Dungeoneering Token farmer made for ME in LUA (**Around 275k-300k tokens per
 - Set `foodAmount` to the amount of food you want to carry.
 - Add your own `PIN` instead of the placeholder `1234`.
   ![image](https://github.com/animoofps/ME-DGTokenFarmer/assets/144723877/8858eb61-bf80-4958-b61a-53ea10180c2d)
-
- **Start either at War's Retreat of Max Guild !**
 
 5. **Useful things to know** :
 -  If you want to use something other than Necromancy check monstercheck2() and remove the conjures from it.
