@@ -3,26 +3,18 @@ RS3 Dungeoneering Token farmer made for ME in LUA (**Around 275k-300k tokens per
 
 ## Setup
 1. Download DGTokenFarmerGithub.lua and utils.lua, place them in your Lua_Scripts folder   ![Path to folder](https://github.com/animoofps/ME-DGTokenFarmer/assets/144723877/cc4b571c-57e5-47d3-953f-49c52575d32d)
+**(For future Dead's utils updates visit [****Dead's utils****](https://me.deadcod.es/dead-utils) )**
+2. Do this if you plan on using Max Guild! **(** Thank you violvte **)**: ![image](https://github.com/animoofps/ME-DGTokenFarmer/assets/144723877/a7414ddc-94c7-4466-952b-836b4d3223cc)                                                     
 
-2. For future Dead's utils updates visit (https://me.deadcod.es/dead-utils)
-
-- DO THIS!(Thank you violvte):
-
-![image](https://github.com/animoofps/ME-DGTokenFarmer/assets/144723877/a7414ddc-94c7-4466-952b-836b4d3223cc)
-                                                        
-                                                          
-                                                      
-
- 3. Update the local variables:
+ 3. **Update the local variables** :
 - Set `foodName` to your desired food item.
 - Set `foodAmount` to the amount of food you want to carry.
 - Add your own `PIN` instead of the placeholder `1234`.
-
   ![image](https://github.com/animoofps/ME-DGTokenFarmer/assets/144723877/8858eb61-bf80-4958-b61a-53ea10180c2d)
 
+ **Start either at War's Retreat of Max Guild !**
 
-
-4. Useful things to know:
+5. **Useful things to know** :
 -  If you want to use something other than Necromancy check monstercheck2() and remove the conjures from it.
 - Tune the portal to the Zamorakian Undercity, otherwise edit the script yourself (for now) so that you use the War's Retreat Teleport.
 - Have your prefered loadout already loaded in, because we are utilizing load last preset here.
@@ -40,14 +32,9 @@ and **Deflect Melee**(![image](https://github.com/animoofps/ME-DGTokenFarmer/ass
  is a **MUST** have in your ability bar!
 
 ## To do
-- ImGUI that lets you pick from Max Guild and Wars room
-- Better banking/prayer renewal utilization
-- Fix the combo bug (Sometimes it fails to 1tick the dash-dive combo and the NPC's follow you to the cerberus)
--  [and whatever else people think of]
+- **Fix the combo bug** (_Sometimes it fails to 1tick the dash-dive combo and the NPC's follow you to the cerberus_)
+-  **[and whatever else people think of]**
 
 ## Contribution
 Feel free to post stuff that could improve the script further, I will implement it into the script!
 Big thanks to everyone that helped me out with the script including [**Dead**](https://me.deadcod.es/), [**Higgins**](https://github.com/higgins-dotcom) and [**Krigaren**](https://github.com/Krigarenex)!
-
-**SPECIAL THANKS** to ![image](https://github.com/animoofps/ME-DGTokenFarmer/assets/144723877/53a38827-a723-4434-a3ea-8f80333b0b9e)
- for not patching the safe spot !
