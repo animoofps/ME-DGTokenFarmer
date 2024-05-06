@@ -212,9 +212,12 @@ local function banking()
         end
     end
     if shouldContinue then
-        API.DoAction_Object1(0x29, 0, {92278}, 50)
-        API.RandomSleep2(2000, 1500, 800)
-        API.WaitUntilMovingandAnimEnds()
+        if (API.GetPray_() < 600) then
+            print("Prayer at " .. API.GetPray_() .. ", renewing it.")
+            API.DoAction_Object1(0x29, 0, {92278}, 50)
+            API.RandomSleep2(2000, 1500, 800)
+            API.WaitUntilMovingandAnimEnds()
+        end
     end
 end
 
