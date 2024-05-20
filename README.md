@@ -3,6 +3,12 @@ RS3 Dungeoneering Token farmer made for ME in LUA (**Around 275k-300k tokens per
 
  **Start either at War's Retreat of Max Guild !**
 
+ For the  **GUI** version:
+ Click either on Max Guild or Wars Retreat and click Start/Pause when you are ready!
+ 
+![image](https://github.com/animoofps/ME-DGTokenFarmer/assets/144723877/3f755aa4-cb46-47b1-b394-635bd480595e)
+
+
 ## Setup
 1. Download DGTokenFarmerGithub.lua and utils.lua, place them in your Lua_Scripts folder   ![Path to folder](https://github.com/animoofps/ME-DGTokenFarmer/assets/144723877/cc4b571c-57e5-47d3-953f-49c52575d32d)
 
