@@ -40,8 +40,7 @@ RS3 Dungeoneering Token farmer made for ME in LUA (**Around 275k-300k tokens per
 - **Deflect Melee**(![image](https://github.com/animoofps/ME-DGTokenFarmer/assets/144723877/18e26310-2482-46aa-a4bf-b1d77857d87c)) is a **MUST** have in your ability bar!
 
 ## To do
-- **Fix the combo bug** (_Sometimes it fails to 1tick the dash-dive combo and the NPC's follow you to the cerberus_)
--  **[and whatever else people think of]**
+- **Better utilization of Teleporting (Sleep times either too long or too short)** 
 
 ## Contribution
 Feel free to post stuff that could improve the script further, I will implement it into the script!
