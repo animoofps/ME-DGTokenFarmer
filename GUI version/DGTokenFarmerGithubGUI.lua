@@ -104,7 +104,7 @@ local function DiveCheck()
     end
 end
 
-local function monstercheck1()
+local function monstercheck1() -- path after the combo 1
     local knightNpc = API.GetAllObjArray1({29296}, 50, {1}) -- Switched to knight pathing calculation
 
     if #knightNpc > 0 then
@@ -126,7 +126,7 @@ local function monstercheck1()
     end
 end
 
-local function monstercheck2()
+local function monstercheck2() -- path after the combo 2
     local KnightNpc = API.GetAllObjArray1({29296}, 50, {1}) -- switched to knight pathing calculation
     if #KnightNpc > 0 then
         local Cerberus = KnightNpc[1]
@@ -158,7 +158,7 @@ local function monstercheck2()
     end
 end
 
-local function knightcheck1()
+local function knightcheck1() -- initial walking before the combo 1
     local knightNpc = API.GetAllObjArray1({29296}, 50, {1})
     if #knightNpc > 0 then
         local knight = knightNpc[1]
@@ -168,15 +168,13 @@ local function knightcheck1()
             newTileX = knight.Tile_XYZ.x - 4
             newTileY = knight.Tile_XYZ.y + randomNumber
             newTileZ = knight.Tile_XYZ.z
-
-            API.RandomSleep2(200, 200, 100)
-
+            local SpotCheck = WPOINT.new(newTileX, newTileY, newTileZ)
             if findNpcOrObject(124355, 5, 12) then
-                --    print("Walking to knight check1")
                 API.DoAction_WalkerW(WPOINT.new(newTileX, newTileY, newTileZ))
                 print("Random number: " .. randomNumber)
-                API.RandomSleep2(1000, 600, 600)
-                API.WaitUntilMovingEnds()
+                while not API.PInAreaW(SpotCheck, 1) do
+                    API.RandomSleep2(100, 10, 10)
+                end
             end
         end
     end
@@ -192,7 +190,7 @@ local function combo()
     monstercheck2()
 end
 
-local function knightcheck2()
+local function knightcheck2() -- initial walking before the combo 2
     local KnightNpc = API.GetAllObjArray1({29296}, 50, {1})
     if #KnightNpc > 0 then
         local Knight = KnightNpc[1]
@@ -201,12 +199,13 @@ local function knightcheck2()
             local newTileXD = Knight.Tile_XYZ.x - 4
             local newTileYD = Knight.Tile_XYZ.y + 13
             local newTileZD = Knight.Tile_XYZ.z
-            API.RandomSleep2(500, 500, 400)
+            local SpotCheck2 = WPOINT.new(newTileXD, newTileYD, newTileZD)
             if API.PInArea(newTileX, 1, newTileY, 1, newTileZ) then
                 --    print("Walking to knight check2")
                 API.DoAction_WalkerW(WPOINT.new(newTileXD, newTileYD, newTileZD))
-                API.RandomSleep2(1200, 600, 600)
-                API.WaitUntilMovingEnds()
+                while not API.PInAreaW(SpotCheck2, 1) do
+                    API.RandomSleep2(10, 10, 10)
+                end
                 combo()
             end
         end
