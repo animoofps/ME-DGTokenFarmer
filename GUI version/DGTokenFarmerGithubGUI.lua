@@ -206,6 +206,7 @@ local function knightcheck2() -- initial walking before the combo 2
                 while not API.PInAreaW(SpotCheck2, 1) do
                     API.RandomSleep2(10, 10, 10)
                 end
+                API.RandomSleep2(200, 300, 400)
                 combo()
             end
         end
