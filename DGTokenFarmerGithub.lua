@@ -181,9 +181,9 @@ local function knightcheck2() -- initial walking before the combo 2
                 --    print("Walking to knight check2")
                 API.DoAction_WalkerW(WPOINT.new(newTileXD, newTileYD, newTileZD))
                 while not API.PInAreaW(SpotCheck2, 1) do
-
                     API.RandomSleep2(10, 10, 10)
                 end
+                API.RandomSleep2(200, 300, 400)
                 combo()
             end
         end
