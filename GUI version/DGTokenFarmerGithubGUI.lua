@@ -286,11 +286,11 @@ local function NPCCheck()
                 API.DoAction_Ability("Deflect Melee", 1, API.OFF_ACT_GeneralInterface_route)
                 API.RandomSleep2(500, 300, 200)
             end
-        end
-        if GUI.GetComponentValue(MaxGuildTP) then
-            MaxGuildTeleport()
-        elseif GUI.GetComponentValue(WarsTP) then
-            WarsRoomTeleport()
+            if GUI.GetComponentValue(MaxGuildTP) then
+                MaxGuildTeleport()
+            elseif GUI.GetComponentValue(WarsTP) then
+                WarsRoomTeleport()
+            end
         end
     else
         if GUI.GetComponentValue(MaxGuildTP) then
