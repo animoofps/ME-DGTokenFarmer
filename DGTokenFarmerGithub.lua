@@ -45,20 +45,18 @@ end
 
 local function enterdung()
     if findNpcOrObject(124285, 15, 12) then
-        API.DoAction_Object1(0x39, 0, {124285}, 50)
+        API.DoAction_Object1(0x39, API.OFF_ACT_GeneralObject_route0, {124285}, 50)
         API.RandomSleep2(400, 200, 400)
         API.WaitUntilMovingEnds(1, 10)
         print("Walking stopped")
         API.RandomSleep2(600, 500, 600)
         if API.Select_Option("Normal mode") then
             print("Normal mode found, continuing")
-            API.DoAction_Interface(0xffffffff, 0xffffffff, 0, 1188, 8, -1, 2912)
         elseif API.Select_Option("No") then
             print("Clicking on No")
-            API.DoAction_Interface(0xffffffff, 0xffffffff, 0, 1188, 13, -1, 2912)
             API.RandomSleep2(600, 300, 500)
             print("Clicking on Normal mode")
-            API.DoAction_Interface(0xffffffff, 0xffffffff, 0, 1188, 8, -1, 2912)
+            API.Select_Option("Normal mode")
         end
         if not findNPC(29296, 15) then
             print("Sleeping untill we find the NPC")
@@ -197,13 +195,13 @@ end
 local function banking()
     local shouldContinue = true
     API.RandomSleep2(500, 300, 500)
-    API.DoAction_NPC(0x33, 1888, {19918}, 50) -- QUICKLOAD
+    API.DoAction_NPC(0x33, API.OFF_ACT_InteractNPC_route4, {19918}, 50) -- QUICKLOAD
     API.RandomSleep2(500, 300, 400)
     API.WaitUntilMovingEnds(1, 5)
     API.DoBankPin(PIN)
     API.RandomSleep2(400, 500, 600) -- sleeping to heal off damage/poison
     if needBank() then
-        API.DoAction_NPC(0x33, 1888, {19918}, 50) -- QUICKLOAD
+        API.DoAction_NPC(0x33, API.OFF_ACT_InteractNPC_route4, {19918}, 50) -- QUICKLOAD
         API.RandomSleep2(800, 500, 600)
         if needBank() then
             API.RandomSleep2(200, 200, 200)
@@ -215,7 +213,7 @@ local function banking()
     if shouldContinue then
         if (API.GetPray_() < 500) then
             print("Prayer at " .. API.GetPray_() .. ", renewing it.")
-            API.DoAction_Object1(0x29, 0, {92278}, 50)
+            API.DoAction_Object1(0x29, API.OFF_ACT_GeneralObject_route0, {92278}, 50)
             API.RandomSleep2(2000, 1500, 800)
             while (API.GetPray_() < 500) do
                 API.RandomSleep2(100, 100, 200)
@@ -242,7 +240,7 @@ local function NPCCheck()
                 banking()
             end
             if API.Read_LoopyLoop() then
-                API.DoAction_Object1(0x39, 0, {124361}, 50) -- teleport in max guild
+                API.DoAction_Object1(0x39, API.OFF_ACT_GeneralObject_route0, {124361}, 50) -- portal in max guild
                 API.RandomSleep2(1200, 1000, 2000)
                 API.WaitUntilMovingEnds()
             else
@@ -254,7 +252,7 @@ end
 
 local function DogFighter()
     if not hasTarget() and not API.CheckAnim(20) then
-        API.DoAction_NPC(0x2a, 1600, {29302}, 50)
+        API.DoAction_NPC(0x2a, API.OFF_ACT_AttackNPC_route, {29302}, 50)
         API.RandomSleep2(800, 600, 400)
     else
         API.RandomSleep2(200, 200, 300)
@@ -285,12 +283,12 @@ local function deathCheck()
         API.RandomSleep2(2500, 1500, 2000)
         print("You managed to die... (idiot), do we grab your things and go home?")
         API.RandomSleep2(1000, 800, 600)
-        API.DoAction_NPC(0x29, 1776, {27299}, 50)
-        API.RandomSleep2(800, 400, 600)
-        API.DoAction_Interface(0xffffffff, 0xffffffff, 1, 1626, 47, -1, 3808)
-        API.RandomSleep2(1000, 800, 600)
-        API.DoAction_Interface(0xffffffff, 0xffffffff, 0, 1626, 72, -1, 2912)
-        API.RandomSleep2(1500, 1000, 800)
+        API.DoAction_NPC(0x29, API.OFF_ACT_InteractNPC_route3, {27299}, 50)
+        API.RandomSleep2(1500, 1500, 2000)
+        API.DoAction_Interface(0xffffffff, 0xffffffff, 1, 1626, 47, -1, API.OFF_ACT_GeneralInterface_route)
+        API.RandomSleep2(1500, 1500, 2000)
+        API.DoAction_Interface(0xffffffff, 0xffffffff, 0, 1626, 72, -1, API.OFF_ACT_GeneralInterface_Choose_option)
+        API.RandomSleep2(1500, 1500, 2000)
         API.DoAction_Ability("Max guild Teleport", 1, API.OFF_ACT_GeneralInterface_route)
         API.RandomSleep2(3600, 1300, 1500)
     end
