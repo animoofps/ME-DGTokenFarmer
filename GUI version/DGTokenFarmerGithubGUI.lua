@@ -377,7 +377,7 @@ API.SetDrawTrackedSkills(true)
 while API.Read_LoopyLoop() do
     GUI.Draw()
     if GUI.GetComponentValue(StartScript) then
-        UTILS:antiIdle()
+        API.SetMaxIdleTime(5)
         healthCheck()
         deathCheck()
         DungeonEntrance()
