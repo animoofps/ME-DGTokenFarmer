@@ -296,7 +296,7 @@ end
 
 API.SetDrawTrackedSkills(true)
 while API.Read_LoopyLoop() do
-    UTILS:antiIdle()
+    API.SetMaxIdleTime(5)
     healthCheck()
     deathCheck()
     enterdung()
